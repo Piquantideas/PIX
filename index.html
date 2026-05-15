@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PI:X — We Don't Just Dress Up Brands. We Move Them.</title>
+<meta name="description" content="PI:X is Singapore's go-to-market strategy and execution consultancy. We help brands reach new consumer segments, expand into or out of Singapore, and find new ideas to stay relevant. PMC certified. Backed by a trusted collective of specialist partners.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #0D0D0B; --paper: #F5F2EC; --accent: #C8502A;
+    --mid: #6B6860; --light: #E8E4DB; --white: #FDFCF9;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-ui: 'Syne', sans-serif; --font-mono: 'DM Mono', monospace;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--font-ui); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: rgba(245,242,236,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(13,13,11,0.08); }
+  .nav-logo { font-family: var(--font-display); font-size: 28px; font-weight: 600; letter-spacing: 0.02em; color: var(--ink); cursor: pointer; }
+  .nav-logo span { color: var(--accent); }
+  .nav-sub { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); display: block; margin-top: -2px; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.2s; cursor: pointer; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: var(--ink); padding: 10px 20px; border: none; cursor: pointer; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--accent); }
+  .page { display: none; min-height: 100vh; padding-top: 80px; }
+  .page.active { display: block; }
+  .container { max-width: 1160px; margin: 0 auto; }
+  section { padding: 96px 48px; }
+  .eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+  .eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
+  .eyebrow.light { color: var(--accent); }
+  .eyebrow.light::before { background: var(--accent); }
+  .display { font-family: var(--font-display); font-size: clamp(36px, 4.5vw, 56px); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); }
+  .display em { font-style: italic; color: var(--accent); }
+  .display.white { color: var(--white); }
+  .btn-dark { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; background: var(--ink); color: var(--white); padding: 15px 30px; border: none; cursor: pointer; transition: background 0.2s; display: inline-block; }
+  .btn-dark:hover { background: var(--accent); }
+  .btn-outline { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); padding: 14px 30px; border: 1px solid var(--ink); background: transparent; cursor: pointer; transition: all 0.2s; display: inline-block; }
+  .btn-outline:hover { background: var(--ink); color: var(--white); }
+  .btn-white { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; background: var(--white); color: var(--accent); padding: 15px 32px; border: none; cursor: pointer; transition: all 0.2s; display: inline-block; }
+  .btn-white:hover { background: var(--ink); color: var(--white); }
+  .cta-band { background: var(--accent); padding: 80px 48px; text-align: center; }
+  .cta-band h2 { font-family: var(--font-display); font-size: clamp(32px, 4vw, 52px); font-weight: 300; font-style: italic; color: var(--white); margin-bottom: 14px; line-height: 1.15; }
+  .cta-band p { font-size: 16px; color: rgba(255,255,255,0.72); margin-bottom: 36px; }
+  footer { background: var(--ink); color: rgba(255,255,255,0.38); padding: 56px 48px 36px; }
+  .footer-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 44px; margin-bottom: 44px; }
+  .footer-brand p { font-size: 12px; color: rgba(255,255,255,0.32); line-height: 1.65; margin-top: 8px; }
+  .footer-col h4 { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 14px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 7px; }
+  .footer-col ul li a { font-size: 13px; color: rgba(255,255,255,0.32); text-decoration: none; cursor: pointer; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: rgba(255,255,255,0.75); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; max-width: 1160px; margin: 0 auto; flex-wrap: wrap; gap: 8px; }
+  .footer-bottom p { font-size: 12px; }
+  .footer-cert { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+
+  /* MARQUEE */
+  .marquee-wrap { background: var(--ink); overflow: hidden; padding: 16px 0; }
+  .marquee { display: flex; animation: marquee 32s linear infinite; white-space: nowrap; }
+  .marquee span { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); padding: 0 36px; }
+  .marquee span.a { color: var(--accent); }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ── HERO ── */
+  .hero { min-height: calc(100vh - 80px); display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 60px; padding: 80px 48px; position: relative; overflow: hidden; }
+  .hero::after { content: 'PI:X'; position: absolute; right: -20px; top: 50%; transform: translateY(-50%); font-family: var(--font-display); font-size: clamp(160px, 18vw, 300px); font-weight: 300; color: rgba(13,13,11,0.035); letter-spacing: -0.05em; pointer-events: none; line-height: 1; }
+  .hero h1 { font-family: var(--font-display); font-size: clamp(48px, 5.5vw, 80px); font-weight: 300; line-height: 1.07; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero-tagline { font-family: var(--font-display); font-size: clamp(18px, 2vw, 24px); font-weight: 300; font-style: italic; color: var(--mid); margin-bottom: 28px; }
+  .hero-body { font-size: 17px; color: var(--mid); line-height: 1.75; max-width: 480px; margin-bottom: 40px; }
+  .hero-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .hero-stats { display: flex; flex-direction: column; border: 1px solid rgba(13,13,11,0.1); }
+  .stat-row { padding: 24px 28px; border-bottom: 1px solid rgba(13,13,11,0.07); }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-num { font-family: var(--font-display); font-size: 44px; font-weight: 300; color: var(--ink); line-height: 1; margin-bottom: 4px; }
+  .stat-num span { color: var(--accent); }
+  .stat-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid); }
+
+  /* THREE TERRITORIES */
+  .territories { background: var(--ink); padding: 96px 48px; }
+  .territory-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.06); margin-top: 56px; }
+  .territory-card { background: rgba(255,255,255,0.02); padding: 48px 36px; cursor: pointer; transition: background 0.3s; }
+  .territory-card:hover { background: rgba(255,255,255,0.05); }
+  .t-num { font-family: var(--font-display); font-size: 64px; font-weight: 300; color: rgba(255,255,255,0.06); line-height: 1; margin-bottom: 8px; }
+  .t-title { font-family: var(--font-display); font-size: 28px; font-weight: 400; color: var(--white); line-height: 1.2; margin-bottom: 16px; }
+  .t-title em { font-style: italic; color: var(--accent); }
+  .t-body { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.75; margin-bottom: 20px; }
+  .t-examples { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); line-height: 1.8; }
+
+  /* MANIFESTO */
+  .manifesto { background: var(--white); padding: 96px 48px; }
+  .manifesto-inner { max-width: 780px; margin: 0 auto; text-align: center; }
+  .manifesto-rule { width: 48px; height: 1px; background: var(--accent); margin: 48px auto; }
+  .manifesto h2 { font-family: var(--font-display); font-size: clamp(34px, 4vw, 52px); font-weight: 300; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 28px; }
+  .manifesto h2 em { font-style: italic; color: var(--accent); }
+  .manifesto p { font-size: 17px; color: var(--mid); line-height: 1.8; margin-bottom: 18px; }
+
+  /* NETWORK SHOWCASE (homepage teaser) */
+  .network-teaser { background: var(--paper); padding: 96px 48px; }
+  .network-teaser-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start; }
+  .nt-left p { font-size: 16px; color: var(--mid); line-height: 1.8; margin-bottom: 20px; }
+  .nt-left p strong { color: var(--ink); font-weight: 500; }
+  .partner-caps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: rgba(13,13,11,0.08); border: 1px solid rgba(13,13,11,0.08); }
+  .cap-card { background: var(--white); padding: 24px 20px; }
+  .cap-name { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+  .cap-desc { font-size: 13px; color: var(--mid); line-height: 1.5; }
+  .network-stat { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(13,13,11,0.08); border: 1px solid rgba(13,13,11,0.08); margin-top: 1px; }
+  .nstat { background: var(--ink); padding: 20px; text-align: center; }
+  .nstat-num { font-family: var(--font-display); font-size: 36px; font-weight: 300; color: var(--accent); line-height: 1; }
+  .nstat-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 4px; }
+
+  /* CLIENTS */
+  .clients-section { padding: 80px 48px; background: var(--white); }
+  .tier-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid rgba(13,13,11,0.08); }
+  .clients-row { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; margin-bottom: 32px; }
+  .client-badge { font-family: var(--font-display); font-size: 16px; font-weight: 400; color: rgba(13,13,11,0.28); letter-spacing: 0.03em; transition: color 0.3s; cursor: default; }
+  .client-badge:hover { color: var(--ink); }
+  .client-badge.featured { color: rgba(13,13,11,0.52); font-size: 18px; }
+
+  /* TESTIMONIALS */
+  .testi-section { background: var(--ink); padding: 96px 48px; }
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.06); margin-top: 56px; }
+  .testi-card { padding: 40px 32px; background: rgba(255,255,255,0.02); }
+  .testi-quote { font-family: var(--font-display); font-size: 18px; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 24px; }
+  .testi-quote::before { content: '\201C'; color: var(--accent); font-size: 32px; line-height: 0; vertical-align: -8px; margin-right: 4px; }
+  .testi-name { font-size: 13px; font-weight: 500; color: var(--white); margin-bottom: 2px; }
+  .testi-title { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+
+  /* ── SERVICES PAGE ── */
+  .page-hero-dark { background: var(--ink); padding: 110px 48px 80px; }
+  .page-hero-dark h1 { font-family: var(--font-display); font-size: clamp(44px, 5.5vw, 82px); font-weight: 300; line-height: 1.07; letter-spacing: -0.02em; color: var(--white); max-width: 720px; margin-bottom: 22px; }
+  .page-hero-dark h1 em { font-style: italic; color: var(--accent); }
+  .page-hero-dark p { font-size: 17px; color: rgba(255,255,255,0.5); max-width: 540px; line-height: 1.75; }
+  .page-hero-light { padding: 110px 48px 72px; }
+  .page-hero-light h1 { font-family: var(--font-display); font-size: clamp(44px, 5.5vw, 82px); font-weight: 300; line-height: 1.07; letter-spacing: -0.02em; color: var(--ink); max-width: 740px; margin-bottom: 0; }
+  .page-hero-light h1 em { font-style: italic; color: var(--accent); }
+  .service-full { padding: 80px 48px; border-bottom: 1px solid rgba(13,13,11,0.07); }
+  .service-full:nth-child(even) { background: var(--white); }
+  .service-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; }
+  .service-full:nth-child(even) .service-inner { direction: rtl; }
+  .service-full:nth-child(even) .service-inner > * { direction: ltr; }
+  .sf-num { font-family: var(--font-mono); font-size: 56px; font-weight: 300; color: rgba(13,13,11,0.06); line-height: 1; margin-bottom: 12px; }
+  .sf-title { font-family: var(--font-display); font-size: 36px; font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 10px; }
+  .sf-for { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .sf-kw { font-size: 12px; color: var(--mid); margin-top: 20px; padding: 14px; background: rgba(200,80,42,0.05); border-left: 2px solid var(--accent); line-height: 1.8; }
+  .sf-kw-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+  .sf-body { font-size: 16px; color: var(--mid); line-height: 1.8; margin-bottom: 28px; }
+  .sf-delivers h4 { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); margin-bottom: 12px; }
+  .deliver-list { list-style: none; margin-bottom: 24px; }
+  .deliver-list li { font-size: 14px; color: var(--mid); padding: 9px 0; border-bottom: 1px solid rgba(13,13,11,0.06); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+  .deliver-list li::before { content: '→'; color: var(--accent); font-size: 12px; flex-shrink: 0; padding-top: 1px; }
+  .edg-note { padding: 14px 16px; background: var(--white); border: 1px solid rgba(13,13,11,0.08); margin-top: 16px; font-size: 13px; color: var(--mid); line-height: 1.6; }
+  .edg-note strong { color: var(--ink); font-weight: 500; }
+  .edg-note-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); margin-bottom: 4px; }
+
+  /* ── NETWORK PAGE ── */
+  .network-hero { background: var(--paper); padding: 110px 48px 80px; }
+  .network-hero h1 { font-family: var(--font-display); font-size: clamp(44px, 5.5vw, 82px); font-weight: 300; line-height: 1.07; letter-spacing: -0.02em; color: var(--ink); max-width: 720px; margin-bottom: 24px; }
+  .network-hero h1 em { font-style: italic; color: var(--accent); }
+  .network-hero p { font-size: 18px; color: var(--mid); max-width: 560px; line-height: 1.75; }
+  .origin-section { background: var(--white); padding: 80px 48px; }
+  .origin-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+  .origin-inner p { font-size: 16px; color: var(--mid); line-height: 1.85; margin-bottom: 18px; }
+  .origin-inner p strong { color: var(--ink); font-weight: 500; }
+  .origin-inner h3 { font-family: var(--font-display); font-size: 30px; font-weight: 400; line-height: 1.2; color: var(--ink); margin-bottom: 22px; }
+  .capability-section { padding: 80px 48px; }
+  .cap-full-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(13,13,11,0.08); border: 1px solid rgba(13,13,11,0.08); margin-top: 56px; }
+  .cap-full-card { background: var(--paper); padding: 36px 28px; }
+  .cap-full-name { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--ink); margin-bottom: 10px; }
+  .cap-full-body { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 12px; }
+  .cap-full-examples { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--accent); line-height: 1.8; }
+  .briefing-section { background: var(--ink); padding: 80px 48px; }
+  .briefing-section .display { color: var(--white); margin-bottom: 20px; }
+  .briefing-section p { font-size: 16px; color: rgba(255,255,255,0.55); max-width: 600px; line-height: 1.8; margin-bottom: 48px; }
+  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.06); }
+  .step-card { padding: 32px 24px; background: rgba(255,255,255,0.02); }
+  .step-num { font-family: var(--font-mono); font-size: 28px; font-weight: 300; color: rgba(255,255,255,0.1); margin-bottom: 12px; }
+  .step-title { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--white); margin-bottom: 8px; }
+  .step-body { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.6; }
+  .bni-section { padding: 80px 48px; background: var(--white); }
+  .bni-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .bni-left p { font-size: 16px; color: var(--mid); line-height: 1.85; margin-bottom: 18px; }
+  .bni-left p strong { color: var(--ink); font-weight: 500; }
+  .bni-countries { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(13,13,11,0.08); border: 1px solid rgba(13,13,11,0.08); }
+  .country-pill { background: var(--paper); padding: 16px 18px; }
+  .country-name { font-family: var(--font-display); font-size: 16px; font-weight: 400; color: var(--ink); }
+  .country-desc { font-size: 12px; color: var(--mid); margin-top: 2px; }
+
+  /* ── ABOUT / CLIENTS / GRANTS / INSIGHTS / CONTACT ── */
+  .about-split { padding: 80px 48px; }
+  .split-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; }
+  .split-inner p { font-size: 16px; color: var(--mid); line-height: 1.85; margin-bottom: 18px; }
+  .split-inner p strong { color: var(--ink); font-weight: 500; }
+  .split-inner h3 { font-family: var(--font-display); font-size: 30px; font-weight: 400; line-height: 1.2; color: var(--ink); margin-bottom: 22px; }
+  .timeline-section { background: var(--white); padding: 72px 48px; }
+  .timeline-inner { max-width: 1160px; margin: 0 auto; }
+  .timeline-row { display: grid; grid-template-columns: 100px 1fr; gap: 32px; padding: 26px 0; border-bottom: 1px solid rgba(13,13,11,0.07); align-items: start; }
+  .timeline-row:first-of-type { border-top: 1px solid rgba(13,13,11,0.07); }
+  .timeline-year { font-family: var(--font-display); font-size: 28px; font-weight: 300; color: rgba(13,13,11,0.18); }
+  .timeline-event { font-size: 15px; color: var(--mid); line-height: 1.7; }
+  .timeline-event strong { color: var(--ink); font-weight: 500; }
+  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(13,13,11,0.08); border: 1px solid rgba(13,13,11,0.08); margin-top: 56px; }
+  .value-card { background: var(--white); padding: 40px 32px; }
+  .value-title { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--ink); margin-bottom: 10px; }
+  .value-body { font-size: 14px; color: var(--mid); line-height: 1.7; }
+  .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(13,13,11,0.08); border: 1px solid rgba(13,13,11,0.08); margin-top: 56px; }
+  .team-card { background: var(--paper); padding: 36px 28px; }
+  .team-card:nth-child(even) { background: var(--white); }
+  .team-name { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--ink); margin-bottom: 3px; }
+  .team-role { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  .team-years { font-family: var(--font-mono); font-size: 10px; color: var(--mid); margin-bottom: 12px; }
+  .team-bio { font-size: 13px; color: var(--mid); line-height: 1.7; }
+  .case-studies { padding: 72px 48px; }
+  .case-study { display: grid; grid-template-columns: 1fr 1.6fr; gap: 72px; padding: 56px 0; border-bottom: 1px solid rgba(13,13,11,0.08); align-items: start; }
+  .cs-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); background: var(--accent); padding: 4px 10px; display: inline-block; margin-bottom: 12px; }
+  .cs-client { font-family: var(--font-display); font-size: 32px; font-weight: 400; color: var(--ink); line-height: 1.15; margin-bottom: 6px; }
+  .cs-sector { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); }
+  .cs-move { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; margin-top: 14px; margin-bottom: 6px; }
+  .cs-move.new-seg { color: #2A5FC8; }
+  .cs-move.expansion { color: #1D9E75; }
+  .cs-move.relevance { color: #C8502A; }
+  .cs-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 7px; margin-top: 18px; }
+  .cs-text { font-size: 15px; color: var(--mid); line-height: 1.75; }
+  .segment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(13,13,11,0.08); border: 1px solid rgba(13,13,11,0.08); margin-top: 56px; }
+  .segment-card { background: var(--white); padding: 36px 28px; }
+  .seg-icon { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .seg-title { font-family: var(--font-display); font-size: 21px; font-weight: 400; color: var(--ink); margin-bottom: 10px; line-height: 1.2; }
+  .seg-body { font-size: 14px; color: var(--mid); line-height: 1.7; }
+  .grants-section { padding: 80px 48px; }
+  .grant-card { background: var(--white); border: 1px solid rgba(13,13,11,0.08); margin-bottom: 1px; overflow: hidden; }
+  .grant-header { display: grid; grid-template-columns: 80px 1fr auto; gap: 28px; align-items: center; padding: 36px 44px; border-bottom: 1px solid rgba(13,13,11,0.06); }
+  .grant-badge { background: var(--accent); color: var(--white); font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 10px; text-align: center; line-height: 1.4; }
+  .grant-name { font-family: var(--font-display); font-size: 26px; font-weight: 400; color: var(--ink); line-height: 1.2; margin-bottom: 4px; }
+  .grant-tagline { font-size: 14px; color: var(--mid); }
+  .grant-pct { font-family: var(--font-display); font-size: 48px; font-weight: 300; color: var(--accent); line-height: 1; text-align: right; }
+  .grant-pct small { font-size: 12px; font-family: var(--font-mono); color: var(--mid); display: block; margin-top: 3px; }
+  .grant-body { padding: 36px 44px; background: var(--paper); }
+  .grant-body p { font-size: 15px; color: var(--mid); line-height: 1.8; margin-bottom: 18px; }
+  .grant-body strong { color: var(--ink); font-weight: 500; }
+  .grant-eligibility h4 { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); margin-bottom: 12px; margin-top: 18px; }
+  .elig-list { list-style: none; }
+  .elig-list li { font-size: 14px; color: var(--mid); padding: 8px 0; border-bottom: 1px solid rgba(13,13,11,0.06); display: flex; gap: 10px; }
+  .elig-list li::before { content: '✓'; color: var(--accent); font-size: 12px; flex-shrink: 0; }
+  .pmc-banner { background: var(--ink); color: var(--white); padding: 44px; margin: 56px 0 0; display: grid; grid-template-columns: 1fr auto; gap: 44px; align-items: center; }
+  .pmc-banner h3 { font-family: var(--font-display); font-size: 26px; font-weight: 400; line-height: 1.3; margin-bottom: 6px; }
+  .pmc-banner p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+  .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(13,13,11,0.08); border: 1px solid rgba(13,13,11,0.08); }
+  .process-step { background: var(--paper); padding: 28px 22px; }
+  .ps-num { font-family: var(--font-mono); font-size: 26px; font-weight: 300; color: rgba(13,13,11,0.09); margin-bottom: 10px; }
+  .ps-title { font-family: var(--font-display); font-size: 18px; font-weight: 400; color: var(--ink); margin-bottom: 7px; }
+  .ps-body { font-size: 13px; color: var(--mid); line-height: 1.6; }
+  .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(13,13,11,0.08); border: 1px solid rgba(13,13,11,0.08); }
+  .article-card { background: var(--paper); padding: 36px 28px; cursor: pointer; transition: background 0.3s; }
+  .article-card:hover { background: var(--ink); }
+  .article-card:hover .art-cat,.article-card:hover .art-title,.article-card:hover .art-excerpt,.article-card:hover .art-read { color: rgba(255,255,255,0.65); }
+  .article-card:hover .art-title { color: var(--white); }
+  .art-cat { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; transition: color 0.3s; }
+  .art-title { font-family: var(--font-display); font-size: 21px; font-weight: 400; color: var(--ink); line-height: 1.25; margin-bottom: 10px; transition: color 0.3s; }
+  .art-excerpt { font-size: 13px; color: var(--mid); line-height: 1.65; margin-bottom: 18px; transition: color 0.3s; }
+  .art-read { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); transition: color 0.3s; }
+  .contact-body { padding: 80px 48px; }
+  .contact-grid { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+  .contact-info h3 { font-family: var(--font-display); font-size: 30px; font-weight: 400; color: var(--ink); margin-bottom: 20px; line-height: 1.2; }
+  .contact-info p { font-size: 15px; color: var(--mid); line-height: 1.8; margin-bottom: 28px; }
+  .contact-detail { padding: 16px 0; border-bottom: 1px solid rgba(13,13,11,0.08); }
+  .contact-detail label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 3px; }
+  .contact-detail span { font-size: 15px; color: var(--ink); }
+  .form-group { margin-bottom: 18px; }
+  .form-group label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); display: block; margin-bottom: 7px; }
+  .form-group input,.form-group select,.form-group textarea { width: 100%; background: var(--white); border: 1px solid rgba(13,13,11,0.12); padding: 12px 14px; font-family: var(--font-ui); font-size: 15px; color: var(--ink); outline: none; transition: border-color 0.2s; appearance: none; }
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus { border-color: var(--ink); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  @media (max-width: 900px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .hero,.territories,.manifesto,.network-teaser,.clients-section,.testi-section,.page-hero-dark,.page-hero-light,.service-full,.network-hero,.origin-section,.capability-section,.briefing-section,.bni-section,.about-split,.timeline-section,.case-studies,.grants-section,.contact-body,.cta-band { padding-left: 20px; padding-right: 20px; }
+    .hero { grid-template-columns: 1fr; gap: 40px; min-height: auto; padding-top: 40px; padding-bottom: 40px; }
+    .hero::after { display: none; }
+    .territory-grid,.testi-grid,.cap-full-grid,.steps-grid,.values-grid,.team-grid,.articles-grid,.segment-grid,.process-grid { grid-template-columns: 1fr; }
+    .network-teaser-inner,.origin-inner,.bni-inner,.split-inner,.contact-grid,.service-inner { grid-template-columns: 1fr; gap: 36px; }
+    .service-full:nth-child(even) .service-inner { direction: ltr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .grant-header { grid-template-columns: 1fr auto; }
+    .grant-badge { display: none; }
+    .pmc-banner { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div>
+    <div class="nav-logo" onclick="showPage('home')">PI<span>:</span>X</div>
+    <span class="nav-sub">A Piquant Ideas Initiative · Est. 2013</span>
+  </div>
+  <ul class="nav-links">
+    <li><a onclick="showPage('services')">Services</a></li>
+    <li><a onclick="showPage('network')">Our Network</a></li>
+    <li><a onclick="showPage('about')">About</a></li>
+    
+    <li><a onclick="showPage('grants')">Grants</a></li>
+    <li><a onclick="showPage('insights')">Insights</a></li>
+  </ul>
+  <button class="nav-cta" onclick="showPage('contact')">Tell Us Where You Want to Grow</button>
+</nav>
+
+
+<!-- ═══════════════════════════════ HOME ═══ -->
+<div id="home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero container" style="max-width:100%; padding-left:48px; padding-right:48px;">
+    <div>
+      <div class="eyebrow">Go-to-Market Strategy & Execution · Singapore</div>
+      <h1>We move brands<br>into <em>new territory.</em></h1>
+      <p class="hero-tagline">We don't just dress up brands. We move them.</p>
+      <p class="hero-body">PI:X helps brands reach new consumer segments, expand into or out of Singapore, and find the ideas that keep them relevant to the customers they already have — and the ones they haven't reached yet. Senior strategy upfront. A trusted execution network behind it.</p>
+      <div class="hero-actions">
+        <button class="btn-dark" onclick="showPage('contact')">Tell Us Where You Want to Grow</button>
+        <button class="btn-outline" onclick="showPage('services')">How We Do It</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee">
+      <span>New Consumer Segments</span><span class="a">—</span><span>Cross-Border Expansion</span><span class="a">—</span><span>Brand Relevance</span><span class="a">—</span><span>Go-to-Market Strategy</span><span class="a">—</span><span>Integrated Campaigns</span><span class="a">—</span><span>Brand Partnerships</span><span class="a">—</span><span>EDG Grant Consultancy</span><span class="a">—</span><span>Trusted Execution Network</span><span class="a">—</span>
+      <span>New Consumer Segments</span><span class="a">—</span><span>Cross-Border Expansion</span><span class="a">—</span><span>Brand Relevance</span><span class="a">—</span><span>Go-to-Market Strategy</span><span class="a">—</span><span>Integrated Campaigns</span><span class="a">—</span><span>Brand Partnerships</span><span class="a">—</span><span>EDG Grant Consultancy</span><span class="a">—</span><span>Trusted Execution Network</span><span class="a">—</span>
+    </div>
+  </div>
+
+  <!-- THREE TERRITORIES -->
+  <div class="territories">
+    <div class="container">
+      <div class="eyebrow light">Three Growth Moves</div>
+      <h2 class="display white">Every brand we work with<br>is trying to <em>move somewhere.</em></h2>
+      <div class="territory-grid">
+        <div class="territory-card" onclick="showPage('services')">
+          <div class="t-num">01</div>
+          <div class="t-title">Reach <em>new segments</em></div>
+          <div class="t-body">Your best customers exist in groups you haven't reached yet — different demographics, industries, life stages, or purchasing behaviours. PI:X identifies who they are, how to speak to them, and how to get there first.</div>
+          <div class="t-examples">Consumer research · Segment strategy · Campaign activation · Brand partnership</div>
+        </div>
+        <div class="territory-card" onclick="showPage('services')">
+          <div class="t-num">02</div>
+          <div class="t-title">Expand <em>across borders</em></div>
+          <div class="t-body">Into Singapore or out of it — across Southeast Asia and beyond. We design the go-to-market strategy, localise your brand for the new market, and activate our on-the-ground execution network to make it real.</div>
+          <div class="t-examples">Market entry strategy · Brand localisation · In-market network · MRA grant</div>
+        </div>
+        <div class="territory-card" onclick="showPage('services')">
+          <div class="t-num">03</div>
+          <div class="t-title">Reinvent <em>your relevance</em></div>
+          <div class="t-body">Markets shift. Audiences change. Competitors move. The brands that stay relevant are the ones that proactively redesign how they create and communicate value — before they have to. PI:X designs that reinvention.</div>
+          <div class="t-examples">Brand repositioning · Business model · New product angle · Loyalty strategy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto">
+    <div class="manifesto-inner container">
+      <div class="manifesto-rule"></div>
+      <h2>We are not a creative agency.<br>We are not a management consultancy.<br>We are <em>the bridge.</em></h2>
+      <p>Most agencies are brilliant at making things look good. Most consultancies are brilliant at writing strategy decks. The problem is the gap between them — where good ideas go to die in implementation.</p>
+      <p>PI:X sits in that gap by design. We design the go-to-market strategy, then activate a trusted network of specialist execution partners to bring it to life — all under one brief, one team, and one accountable relationship. Senior thinking from Piquant Ideas, built since 2013. Execution reach that a single consultancy could never have alone.</p>
+      <div class="manifesto-rule"></div>
+    </div>
+  </section>
+
+  <!-- NETWORK TEASER -->
+  <section class="network-teaser">
+    <div class="network-teaser-inner container">
+      <div class="nt-left">
+        <div class="eyebrow">The PI:X Collective</div>
+        <h2 class="display" style="margin-bottom: 28px;">One brief.<br><em>Every capability.</em></h2>
+        <p>PI:X is powered by a curated network of <strong>20+ specialist execution partners</strong> — each a senior-led firm, each vetted, each briefed and governed by PI:X throughout the engagement.</p>
+        <p>When you brief PI:X, you get access to market research, corporate services, financial advisory, web and digital, retail channels, events, PR and digital marketing — without managing 10 separate vendor relationships or losing the strategic thread between them.</p>
+        <p><strong>This is our structural advantage.</strong> No single consultancy or agency can offer this. It exists because we built it intentionally, through 12 years of relationships and the BNI Singapore network.</p>
+        <div style="margin-top: 28px; display: flex; gap: 14px; flex-wrap: wrap;">
+          <button class="btn-dark" onclick="showPage('network')">Meet the Collective →</button>
+        </div>
+      </div>
+      <div>
+        <div class="partner-caps">
+          <div class="cap-card"><div class="cap-name">Market Research</div><div class="cap-desc">Consumer insights, competitive intelligence, brand tracking and audience segmentation</div></div>
+          <div class="cap-card"><div class="cap-name">Corporate Services</div><div class="cap-desc">Company secretarial, accounting, HR and legal support for business operations</div></div>
+          <div class="cap-card"><div class="cap-name">Financial Advisory</div><div class="cap-desc">Budgeting, forecasting, capital raising and M&amp;A advisory</div></div>
+          <div class="cap-card"><div class="cap-name">Web & Digital</div><div class="cap-desc">Websites, e-commerce, UX/UI design and brand identity systems</div></div>
+          <div class="cap-card"><div class="cap-name">Retail Channels</div><div class="cap-desc">Marketplace listings, department store partnerships and pharmacy distribution</div></div>
+          <div class="cap-card"><div class="cap-name">Events & Activation</div><div class="cap-desc">Product launches, corporate events, trade shows and experiential campaigns</div></div>
+          <div class="cap-card"><div class="cap-name">Public Relations</div><div class="cap-desc">Media relations, thought leadership and communications across Singapore and the region</div></div>
+          <div class="cap-card"><div class="cap-name">Digital Marketing</div><div class="cap-desc">Performance marketing, SEO, social media, paid media, content and analytics</div></div>
+        </div>
+        <div class="network-stat">
+          <div class="nstat"><div class="nstat-num">8</div><div class="nstat-label">Partner disciplines</div></div>
+          <div class="nstat"><div class="nstat-num">PMC</div><div class="nstat-label">Certified practice</div></div>
+          <div class="nstat"><div class="nstat-num">1</div><div class="nstat-label">Brief. One team.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section class="clients-section">
+    <div class="container">
+      <div class="eyebrow">Clients</div>
+      <h2 class="display" style="margin-bottom: 48px;">Trusted by organisations<br>ready to <em>make a move.</em></h2>
+      <div class="tier-label">Institutional & Government</div>
+      <div class="clients-row">
+        <span class="client-badge featured">Law Society of Singapore</span>
+        <span class="client-badge featured">Temasek Trust</span>
+        <span class="client-badge featured">Singapore Maritime Foundation</span>
+        <span class="client-badge featured">OUE Healthcare</span>
+      </div>
+      <div class="tier-label">Corporate & Professional Services</div>
+      <div class="clients-row">
+        <span class="client-badge">CJ Group</span>
+        <span class="client-badge">IPA Advisory</span>
+        <span class="client-badge">Fortis Law</span>
+        <span class="client-badge">Elite Advisory</span>
+        <span class="client-badge">InnoArk</span>
+        <span class="client-badge">Visionnaires Capital</span>
+        <span class="client-badge">Syner-G Technologies</span>
+        <span class="client-badge">Safe Engineering</span>
+      </div>
+      <div class="tier-label">Consumer, Healthcare & Lifestyle</div>
+      <div class="clients-row">
+        <span class="client-badge">Caring Skin</span>
+        <span class="client-badge">Nuceuticals</span>
+        <span class="client-badge">Re:Erth</span>
+        <span class="client-badge">Famibiotics</span>
+        <span class="client-badge">World of Wellness</span>
+        <span class="client-badge">Lavish Catering</span>
+        <span class="client-badge">3 Embers Catering</span>
+        <span class="client-badge">Heritage Ceramics</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testi-section">
+    <div class="container">
+      <div class="eyebrow">Client Results</div>
+      <h2 class="display white" style="margin-bottom: 0;">What our clients say.</h2>
+      <div class="testi-grid">
+        <div class="testi-card"><div class="testi-quote">Piquant understood perfectly what we wanted to achieve. We received high accolades from our clients on the work done. We highly recommend them.</div><div class="testi-name">Ho Kok Zee</div><div class="testi-title">Founder · Heritage Ceramics</div></div>
+        <div class="testi-card"><div class="testi-quote">Through the market research conducted by Piquant, I was able to better understand the market — which gave me the confidence to launch my new business.</div><div class="testi-name">Viviana Cheon</div><div class="testi-title">Founder · World of Wellness</div></div>
+        <div class="testi-card"><div class="testi-quote">Since the rebrand, we've received positive feedback from both customers and partners. The new identity has strengthened our presence across all touchpoints.</div><div class="testi-name">Christabel Lim</div><div class="testi-title">Brand Manager · Caring Skin</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>"Tell us where you want to grow.<br>We'll tell you how."</h2>
+    <p>A complimentary 45-minute growth diagnostic for qualifying organisations. No pitch. No templates. Just an honest conversation about where your brand needs to move next.</p>
+    <button class="btn-white" onclick="showPage('contact')">Book a Growth Diagnostic</button>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><div class="nav-logo" onclick="showPage('home')" style="font-family:var(--font-display); font-size:24px; font-weight:600; color:var(--white); cursor:pointer;">PI<span style="color:var(--accent)">:</span>X</div><p>Go-to-market strategy and execution for brands that want to move. A Piquant Ideas initiative, est. 2013. PMC Certified · GoBusiness IPGrow Listed.</p></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a onclick="showPage('services')">Go-to-Market Strategy</a></li><li><a onclick="showPage('services')">Market Expansion</a></li><li><a onclick="showPage('services')">Brand Relevance</a></li><li><a onclick="showPage('services')">Integrated Campaigns</a></li><li><a onclick="showPage('services')">EDG Grant Consultancy</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a onclick="showPage('network')">Our Network</a></li><li><a onclick="showPage('about')">About PI:X</a></li><li><a onclick="showPage('grants')">Grants</a></li><li><a onclick="showPage('insights')">Insights</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a>hello@piquantideas.com</a></li><li><a>(65) 6920 2856</a></li><li><a>36 Carpenter Street, Singapore</a></li><li><a>piquantideas.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 PI:X · A division of Piquant Ideas Pte. Ltd. · Reg. 2013</p><span class="footer-cert">PMC Certified · Enterprise Singapore · GoBusiness IPGrow</span></div>
+  </footer>
+</div>
+
+
+<!-- ═══════════════════════ SERVICES ═══ -->
+<div id="services" class="page">
+  <div class="page-hero-dark">
+    <div class="container">
+      <div class="eyebrow" style="color:var(--accent);">What We Do</div>
+      <h1>We help brands move<br>into <em>new territory.</em></h1>
+      <p>Go-to-market strategy and end-to-end execution — across new consumer segments, new geographies, and new ideas for staying relevant. Senior strategic thinking at the front, and a trusted collective of specialist partners behind it.</p>
+    </div>
+  </div>
+
+  <div class="service-full">
+    <div class="service-inner container">
+      <div><div class="sf-num">01</div><div class="sf-title">Go-to-Market Strategy</div><div class="sf-for">For: All segments · Listed Co. · MNCs · Ambitious SMEs</div><div class="sf-kw"><div class="sf-kw-label">Search terms</div>go-to-market strategy Singapore · GTM consultant Singapore · brand strategy consultant Singapore · marketing strategy consultancy Singapore</div></div>
+      <div>
+        <p class="sf-body">Go-to-market strategy is the master discipline behind everything PI:X does. Whether you are launching a new product, entering a new consumer segment, repositioning against a competitor, or expanding into a new market — the GTM strategy is what determines whether the move succeeds or stalls.<br><br>PI:X designs go-to-market strategies grounded in primary research: who the target audience is, how they make decisions, what your competitive white space looks like, and which channels and messages will move them. Built on the Piquant Ideas founding methodology — insights first, strategy second, execution third — refined over 12 years of brand and marketing strategy in Singapore.</p>
+        <div class="sf-delivers"><h4>What We Can Do for You</h4>
+          <ul class="deliver-list">
+            <li>Target audience research and new segment identification</li>
+            <li>Competitive landscape and positioning white-space analysis</li>
+            <li>Brand positioning and messaging strategy for the new audience</li>
+            <li>Channel strategy and media mix recommendation</li>
+            <li>Launch planning and campaign activation roadmap</li>
+            <li>KPI framework and measurement plan</li>
+            <li>Board-ready GTM presentation for stakeholder alignment</li>
+          </ul>
+        </div>
+        <div class="edg-note"><div class="edg-note-label">EDG Grant Eligible</div>Qualifies under Enterprise Singapore's <strong>Strategic Brand and Marketing Development</strong> scope — up to 50% of consultancy fees covered for eligible Singapore businesses engaging a PMC-certified consultant.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-full">
+    <div class="service-inner container">
+      <div><div class="sf-num">02</div><div class="sf-title">Market Expansion — Into & Out of Singapore</div><div class="sf-for">For: Singapore brands expanding to SEA · International brands entering Singapore</div><div class="sf-kw"><div class="sf-kw-label">Search terms</div>market entry strategy Singapore · Singapore market entry consultant · Southeast Asia expansion strategy · MRA grant consultant Singapore · brand localisation SEA</div></div>
+      <div>
+        <p class="sf-body">PI:X has supported international brands from Korea and Japan successfully entering the Singapore market — developing the go-to-market strategy, brand positioning for a new audience, and channel activation to establish a meaningful local presence from day one.<br><br>Whether you are an international brand entering Singapore or a Singapore brand exploring new regional opportunities, PI:X designs the market entry strategy grounded in real consumer research and connects you to the right channel and execution partners to bring it to life. MRA grant funding covers a significant portion of this work for eligible Singapore-registered businesses.</p>
+        <div class="sf-delivers"><h4>What We Can Do for You</h4>
+          <ul class="deliver-list">
+            <li>Market prioritisation and entry sequencing across SEA</li>
+            <li>Primary in-market consumer and competitive research</li>
+            <li>Brand localisation strategy for messaging, product and channels</li>
+            <li>Regulatory and cultural landscape briefing by market</li>
+            <li>Local partner and distribution channel identification</li>
+            <li>In-market execution activation via PI:X partner network</li>
+            <li>MRA grant application preparation and submission</li>
+          </ul>
+        </div>
+        <div class="edg-note"><div class="edg-note-label">MRA Grant Eligible</div>The <strong>Market Readiness Assistance Grant</strong> covers up to 50% of market entry strategy and market promotion costs for Singapore companies entering new overseas markets.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-full">
+    <div class="service-inner container">
+      <div><div class="sf-num">03</div><div class="sf-title">Brand Relevance & Repositioning</div><div class="sf-for">For: Listed Co. · Established brands · MNCs facing market shift</div><div class="sf-kw"><div class="sf-kw-label">Search terms</div>brand repositioning Singapore · brand relevance strategy Singapore · business strategy consultant Singapore · brand transformation consultant · strategic marketing consultancy Singapore</div></div>
+      <div>
+        <p class="sf-body">The most dangerous moment for a brand is not a crisis — it is the slow drift of irrelevance. When your audience's expectations evolve faster than your brand does, the gap quietly widens until a competitor fills it. PI:X helps brands identify that drift early and design the strategic moves that restore momentum.<br><br>This work sits at the intersection of business strategy and brand strategy — examining how the brand creates value, how it communicates that value, and whether both remain compelling to the audiences that matter most. As PMC-certified practitioners, we bring the rigour of a strategic review with the creative ambition to see genuine new possibilities, not just incremental improvements.</p>
+        <div class="sf-delivers"><h4>What We Can Do for You</h4>
+          <ul class="deliver-list">
+            <li>Brand relevance audit — gap between current position and audience expectations</li>
+            <li>Customer landscape research and evolving expectations mapping</li>
+            <li>Business model and value proposition review</li>
+            <li>New segment and adjacent audience identification</li>
+            <li>Repositioning strategy with phased implementation roadmap</li>
+            <li>Technology and partnership opportunities to support relevance</li>
+            <li>Board-ready strategic presentation and stakeholder communications</li>
+          </ul>
+        </div>
+        <div class="edg-note"><div class="edg-note-label">EDG Grant Eligible</div>Qualifies under <strong>Business Strategy Development</strong> and <strong>Strategic Brand and Marketing Development</strong> — up to 50% of fees for eligible Singapore businesses.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-full">
+    <div class="service-inner container">
+      <div><div class="sf-num">04</div><div class="sf-title">Integrated Campaigns & Brand Partnerships</div><div class="sf-for">For: All segments · Campaign activation · New audience reach</div><div class="sf-kw"><div class="sf-kw-label">Search terms</div>integrated marketing campaign Singapore · brand partnership Singapore · co-marketing strategy Singapore · marketing campaign strategy Singapore · integrated marketing communications</div></div>
+      <div>
+        <p class="sf-body">Once the go-to-market strategy is clear, campaigns and partnerships are the mechanism that delivers it in market. PI:X designs integrated marketing campaigns that earn attention rather than buying it — and identifies brand partnerships that create value for all parties involved: both brands, their partner, and their combined audiences.<br><br>We are particularly skilled at finding non-obvious partnerships — connecting brands from different industries to co-create campaigns that neither could achieve alone. This is a signature PI:X capability, and one of the few our competitors cannot easily replicate because it requires both strategic depth and an execution network wide enough to activate the idea end-to-end.</p>
+        <div class="sf-delivers"><h4>What We Can Do for You</h4>
+          <ul class="deliver-list">
+            <li>Integrated campaign strategy and creative platform development</li>
+            <li>Brand partnership identification, due diligence and deal structuring</li>
+            <li>Multi-channel campaign architecture across digital, PR, events and experiential</li>
+            <li>Influencer and creator partnership strategy — performance-based structuring</li>
+            <li>KPI framework, attribution modelling and measurement planning</li>
+            <li>End-to-end campaign execution via the PI:X Collective</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-full">
+    <div class="service-inner container">
+      <div><div class="sf-num">05</div><div class="sf-title">Public Sector & Industry Communications</div><div class="sf-for">For: Statutory Boards · GLCs · Industry Associations</div><div class="sf-kw"><div class="sf-kw-label">Search terms</div>public sector marketing consultancy Singapore · communications consultancy statutory board · industry campaign Singapore · stakeholder communications · GeBIZ marketing consultancy</div></div>
+      <div>
+        <p class="sf-body">Effective public sector and institutional communications starts with deeply understanding the target audience — who they are, what motivates them, and what will genuinely move them to act. PI:X has worked with the Law Society of Singapore, Singapore Maritime Foundation and Temasek Trust to design communications campaigns that reach the right people with the right message, through the right channels.<br><br>Whether the goal is talent attraction, industry awareness, behaviour change or stakeholder engagement, we build the strategy around audience insight first — not around what sounds good in a brief.</p>
+        <div class="sf-delivers"><h4>What We Can Do for You</h4>
+          <ul class="deliver-list">
+            <li>Industry event strategy, content programming and speaker management</li>
+            <li>Media, PR and digital amplification across stakeholder channels</li>
+            <li>GeBIZ-compliant tender strategy and proposal preparation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-full">
+    <div class="service-inner container">
+      <div><div class="sf-num">06</div><div class="sf-title">EDG Grant Consultancy</div><div class="sf-for">For: Singapore-registered businesses · PMC-certified engagement required</div><div class="sf-kw"><div class="sf-kw-label">Search terms</div>EDG grant marketing consultant Singapore · PMC certified consultant Singapore · Enterprise Development Grant branding · EDG approved consultant · GoBusiness IPGrow Singapore</div></div>
+      <div>
+        <p class="sf-body">As a PMC-certified consultancy listed on Enterprise Singapore's GoBusiness IPGrow platform, PI:X helps qualifying Singapore businesses access the Enterprise Development Grant — funding up to 50% of eligible consultancy costs for go-to-market strategy, brand development and business strategy projects.<br><br>Grant-eligible work is central to how PI:X operates. Our service scopes, project documentation and delivery framework are aligned with Enterprise Singapore's requirements. Our presence on GoBusiness means your application is backed by a verified, government-recognised consultancy. Most clients who go through this process are surprised by how much qualifies — and by how much the grant changes the commercial case for senior strategic thinking.</p>
+        <div class="sf-delivers"><h4>What We Can Do for You</h4>
+          <ul class="deliver-list">
+            <li>Free EDG eligibility assessment — 30 minutes, no obligation</li>
+            <li>Application preparation and submission managed by PI:X</li>
+            <li>Grant-compliant project scoping and documentation</li>
+            <li>Go-to-Market Strategy — EDG eligible</li>
+            <li>Strategic Brand Development — EDG eligible</li>
+            <li>Business Strategy Development — EDG eligible</li>
+            <li>Market Readiness Assistance (MRA) for overseas expansion — EDG eligible</li>
+          </ul>
+        </div>
+        <div style="margin-top: 24px; display: flex; gap: 14px; flex-wrap: wrap;">
+          <button class="btn-dark" onclick="showPage('grants')">Full Grants Guide →</button>
+          <button class="btn-outline" onclick="showPage('contact')">Check Your Eligibility — Free</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <h2>Not sure which move<br>you need to make first?</h2>
+    <p>A complimentary 45-minute growth diagnostic tells you exactly where to focus. No pitch. Just an honest conversation.</p>
+    <button class="btn-white" onclick="showPage('contact')">Book a Growth Diagnostic</button>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><div class="nav-logo" onclick="showPage('home')" style="font-family:var(--font-display); font-size:24px; font-weight:600; color:var(--white); cursor:pointer;">PI<span style="color:var(--accent)">:</span>X</div><p>Go-to-market strategy and execution. A Piquant Ideas initiative.</p></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a onclick="showPage('services')">Go-to-Market Strategy</a></li><li><a onclick="showPage('services')">Market Expansion</a></li><li><a onclick="showPage('services')">Brand Relevance</a></li><li><a onclick="showPage('services')">Campaigns & Partnerships</a></li><li><a onclick="showPage('services')">EDG Grant</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a onclick="showPage('network')">Our Network</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('grants')">Grants</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a>hello@piquantideas.com</a></li><li><a>(65) 6920 2856</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 PI:X · Piquant Ideas Pte. Ltd.</p><span class="footer-cert">PMC Certified · GoBusiness IPGrow</span></div>
+  </footer>
+</div>
+
+
+<!-- ═════════════════════════ NETWORK PAGE (NEW) ═══ -->
+<div id="network" class="page">
+  <div class="network-hero">
+    <div class="container">
+      <div class="eyebrow">The PI:X Collective</div>
+      <h1>Strategy is only as good<br>as the people who <em>execute it.</em></h1>
+      <p>PI:X is backed by a trusted collective of specialist partners — senior-led firms across every discipline a brand might need, all vetted, all briefed and governed by PI:X. When you brief us, you access the full depth of this Collective under one accountable relationship.</p>
+    </div>
+  </div>
+
+  <div class="origin-section">
+    <div class="origin-inner container">
+      <div>
+        <h3>Why the Collective exists</h3>
+        <p>The PI:X Collective was not assembled by a procurement team. It was built through <strong>years of professional relationships</strong> — practitioners who Celestine and the Piquant Ideas team have worked alongside, referred to clients, and come to trust through real-world delivery.</p>
+        <p>Many of our Collective partners share a common origin story: <strong>senior careers at international agencies or corporations</strong>, followed by the decision to build something better — their own firms, their own standards, their own relationships. When PI:X brings them into an engagement, they are not subcontractors. They are co-owners of the outcome.</p>
+        <p>This matters because the quality of execution is what separates a strategy that works from one that looks good on a slide. PI:X has spent a decade building the network that removes that risk.</p>
+      </div>
+      <div>
+        <h3>How the Collective is governed</h3>
+        <p>Every Collective partner is briefed by PI:X — not by the client. The strategic context, the brand standards, the campaign objectives and the KPIs are held in a single place and communicated consistently across every execution partner involved in the engagement.</p>
+        <p>The client has <strong>one point of contact throughout</strong>. One relationship to manage. One team accountable for the outcome. What changes behind that relationship is the depth of specialist capability activated to deliver it — without the overhead, the briefing gaps, or the coordination losses that come from managing multiple vendors directly.</p>
+        <p>The result: <strong>agency-quality execution at boutique-consultancy speed and accountability</strong>. It is one of the most difficult things in our industry to build, and it is one of the things that makes PI:X genuinely rare.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="capability-section">
+    <div class="container">
+      <div class="eyebrow">Collective Capabilities</div>
+      <h2 class="display" style="margin-bottom: 0;">Eight disciplines.<br><em>One briefing.</em></h2>
+      <div class="cap-full-grid">
+        <div class="cap-full-card"><div class="cap-full-name">Public Relations</div><div class="cap-full-body">Senior PR practitioners with established media relationships across Singapore and Southeast Asia. Trade, consumer and financial media.</div><div class="cap-full-examples">Media relations · Thought leadership · Crisis communications · Spokesperson training · Press releases · Feature placements</div></div>
+        <div class="cap-full-card"><div class="cap-full-name">Digital Marketing</div><div class="cap-full-body">Performance-driven specialists across search, social, content and paid media. All data-backed, all results-accountable.</div><div class="cap-full-examples">SEO · SEM · Social media · Performance marketing · Content strategy · Analytics · Email campaigns</div></div>
+        <div class="cap-full-card"><div class="cap-full-name">Market Research</div><div class="cap-full-body">In-house at Piquant Ideas. Primary consumer research, competitive intelligence, brand tracking and audience segmentation.</div><div class="cap-full-examples">Focus groups · Surveys · Depth interviews · Competitive analysis · Brand tracking · Customer journey research</div></div>
+        <div class="cap-full-card"><div class="cap-full-name">Events & Activation</div><div class="cap-full-body">Experiential and corporate event specialists. From product launches to industry conferences and consumer activations.</div><div class="cap-full-examples">Product launches · Corporate events · Trade shows · Pop-up activations · Industry forums · Award ceremonies</div></div>
+        <div class="cap-full-card"><div class="cap-full-name">Web & UX/UI Design</div><div class="cap-full-body">In-house at Piquant Ideas. Digital platform design and development, e-commerce, UX/UI and brand identity systems.</div><div class="cap-full-examples">Website design & development · E-commerce · UX/UI · Brand identity · App design · Digital brand guidelines</div></div>
+        <div class="cap-full-card"><div class="cap-full-name">Financial Advisory</div><div class="cap-full-body">Commercial and financial advisors for brand valuation, investor communications and growth strategy financial modelling.</div><div class="cap-full-examples">Brand valuation · Investor narrative · Commercial modelling · Due diligence comms · M&A brand strategy</div></div>
+        <div class="cap-full-card"><div class="cap-full-name">Regional In-Market Partners</div><div class="cap-full-body">On-the-ground execution partners across Southeast Asia via the BNI Singapore network. Vetted, senior-led, locally credible.</div><div class="cap-full-examples">Malaysia · Indonesia · Thailand · Vietnam · Philippines · And via BNI: international markets worldwide</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="briefing-section">
+    <div class="container">
+      <div class="eyebrow" style="color:var(--accent);">How It Works</div>
+      <h2 class="display white" style="margin-bottom: 20px;">One brief in.<br><em>Full capability out.</em></h2>
+      <p>The PI:X model is simple by design. The complexity is on our side — the client experience is a single, accountable relationship from strategy through execution.</p>
+      <div class="steps-grid">
+        <div class="step-card"><div class="step-num">01</div><div class="step-title">You brief PI:X</div><div class="step-body">One conversation. You tell us where you want to grow — new segment, new market, new relevance. We ask the right questions.</div></div>
+        <div class="step-card"><div class="step-num">02</div><div class="step-title">PI:X designs the strategy</div><div class="step-body">Our senior team builds the go-to-market strategy. Research. Positioning. Channel plan. Measurement framework. Board-ready.</div></div>
+        <div class="step-card"><div class="step-num">03</div><div class="step-title">PI:X briefs the Collective</div><div class="step-body">We select the right execution partners for your brief and onboard them with full strategic context. They execute to the same standard. You don't manage them — we do.</div></div>
+        <div class="step-card"><div class="step-num">04</div><div class="step-title">One team delivers</div><div class="step-body">You maintain one relationship. We maintain the whole. Strategy and execution stay connected throughout, governed by the same team that designed it.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bni-section">
+    <div class="bni-inner container">
+      <div class="bni-left">
+        <div class="eyebrow">BNI Singapore Network</div>
+        <h2 class="display" style="margin-bottom: 24px;">A global network,<br><em>locally activated.</em></h2>
+        <p>PI:X is a member of the BNI Singapore network — one of the world's largest and most trusted professional referral networks, with chapters across Southeast Asia and globally.</p>
+        <p>This gives PI:X access to <strong>vetted, senior-led vendors and partners</strong> across virtually every category a client might need — not just in Singapore, but across the region and internationally. When a client needs a capability we haven't encountered before, BNI is where we find the right partner.</p>
+        <p>This is not a directory. It is a relationship network governed by referral trust — which means every partner we bring in has been vouched for by people we know and work with. That accountability flows directly into the quality of your engagement.</p>
+      </div>
+      <div>
+        <div class="eyebrow">BNI Singapore Network</div>
+        <p style="font-size:16px; color:var(--mid); line-height:1.8; margin-bottom:20px;">Through BNI Singapore — one of the world's largest professional referral networks — PI:X can access vetted vendors and specialist partners across virtually every category a brand might need, both locally and internationally.</p>
+        <p style="font-size:16px; color:var(--mid); line-height:1.8; margin-bottom:20px;">Every partner in the BNI network is vouched for by people we know and work with. That referral accountability flows directly into the quality and reliability of every engagement PI:X manages.</p>
+        <p style="font-size:16px; color:var(--mid); line-height:1.8;">When a client needs a capability we haven't worked with before, <strong style="color:var(--ink);">BNI is where we find the right partner</strong> — quickly, confidently and with built-in trust already established.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>One brief.<br>Everything you need to move.</h2>
+    <p>Tell us where your brand needs to go. We'll tell you exactly who and what it takes to get there.</p>
+    <button class="btn-white" onclick="showPage('contact')">Start the Conversation</button>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><div class="nav-logo" onclick="showPage('home')" style="font-family:var(--font-display); font-size:24px; font-weight:600; color:var(--white); cursor:pointer;">PI<span style="color:var(--accent)">:</span>X</div><p>Go-to-market strategy and execution. A Piquant Ideas initiative.</p></div>
+      <div class="footer-col"><h4>Network</h4><ul><li><a onclick="showPage('network')">Collective Overview</a></li><li><a onclick="showPage('network')">Eight Disciplines</a></li><li><a onclick="showPage('network')">How It Works</a></li><li><a onclick="showPage('network')">BNI Singapore</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a onclick="showPage('services')">Services</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a>hello@piquantideas.com</a></li><li><a>(65) 6920 2856</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 PI:X · Piquant Ideas Pte. Ltd.</p><span class="footer-cert">PMC Certified · GoBusiness IPGrow</span></div>
+  </footer>
+</div>
+
+
+<!-- ════════════════════════ ABOUT ═══ -->
+<div id="about" class="page">
+  <div class="page-hero-light">
+    <div class="container">
+      <div class="eyebrow">About PI:X</div>
+      <h1>We built PI:X because<br>brands deserve better than <em>a junior team.</em></h1>
+    </div>
+  </div>
+
+  <div class="about-split">
+    <div class="split-inner container">
+      <div>
+        <h3>The origin of PI:X</h3>
+        <p>PI:X is the go-to-market execution arm of <strong>Piquant Ideas Pte. Ltd.</strong> — a boutique brand and business consultancy founded in Singapore in 2013. For twelve years, Piquant Ideas built a reputation for insight-led brand strategy that delivers real commercial outcomes: market expansions, brand repositioning, talent attraction and business transformation across eight industries and six countries.</p>
+        <p>PI:X extends that foundation. It exists because the brands that needed the most strategic help — listed companies, government bodies, MNCs with ambitious growth agendas — were being served by international agencies that sent senior partners to win the pitch, then handed the work to whoever was available. We decided to build the alternative.</p>
+        <p>At PI:X, the person you meet is the person who does the work. The strategic thinking, the client relationship and the quality accountability all stay in the same hands — backed by a trusted collective of specialist partners that extends our reach without sacrificing our standards.</p>
+      </div>
+      <div>
+        <h3>What makes us genuinely different</h3>
+        <p>We are <strong>PMC-certified consultants</strong> recognised by Enterprise Singapore and listed on the GoBusiness IPGrow platform — the government's curated directory of verified service providers. This means clients can access government grants for up to 50% of our consultancy fees.</p>
+        <p>And we are connected to the <strong>BNI Singapore network and a curated regional partner ecosystem</strong> — which means we can move from strategy to execution in any of six markets without managing that complexity back to the client. One brief. One team. Genuine end-to-end accountability.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="timeline-section">
+    <div class="timeline-inner container">
+      <div class="eyebrow">Our Journey</div>
+      <h2 class="display" style="margin-bottom: 48px;">12 years of moving brands<br><em>into new territory.</em></h2>
+
+    </div>
+  </section>
+
+  <section style="padding: 80px 48px; background: var(--white);">
+    <div class="container">
+      <div class="eyebrow">How We Work</div>
+      <h2 class="display" style="margin-bottom: 0;">The PI:X principles.</h2>
+      <div class="values-grid">
+        <div class="value-card"><div class="value-title">Insights before everything</div><div class="value-body">We never recommend a channel, a campaign or a market before we understand who the audience is and what will actually move them. Insight is the foundation. Everything else follows.</div></div>
+        <div class="value-card"><div class="value-title">Senior minds, always</div><div class="value-body">The strategist you brief is the strategist who delivers. No handoffs. The Piquant Ideas founding team is your PI:X team. This is non-negotiable.</div></div>
+        <div class="value-card"><div class="value-title">Execution is the point</div><div class="value-body">Strategy without execution is just expensive decoration. Every PI:X engagement ends in something real happening in market — activated through our Collective of specialist partners — each personally vetted and briefed by PI:X.</div></div>
+        <div class="value-card"><div class="value-title">Honesty over comfort</div><div class="value-body">We will tell you when your brief is solving the wrong problem. We will push back on assumptions that don't serve your business. That kind of counsel is sometimes uncomfortable. It is also the kind that matters.</div></div>
+        <div class="value-card"><div class="value-title">Results, not reports</div><div class="value-body">We measure success in market share, revenue impact, new audience reach and business outcomes. Not slide counts, not impressions, not brand guidelines that gather dust.</div></div>
+        <div class="value-card"><div class="value-title">One team end-to-end</div><div class="value-body">Strategy and execution are governed by the same mind. When we activate execution partners, they are briefed, managed and held to the same standards as our own work.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 80px 48px;">
+    <div class="container">
+      <div class="eyebrow">The Team</div>
+      <h2 class="display" style="margin-bottom: 16px;">Senior practitioners.<br><em>Every one of them.</em></h2>
+      <p style="font-size:16px; color:var(--mid); max-width:560px; line-height:1.75; margin-bottom: 0;">The PI:X team is drawn from Piquant Ideas' core leadership — each with 10–20+ years of hands-on experience across strategy, research, design, digital and go-to-market execution.</p>
+      <div class="team-grid">
+        <div class="team-card"><div class="team-name">Celestine Koh</div><div class="team-role">Founder & Chief Strategist</div><div class="team-years">15+ years · Research & Brand Strategy</div><div class="team-bio">Founder of Piquant Ideas. Has helped dozens of Singapore and regional brands reinvent themselves — leading to successful market expansions, talent acquisition and business acquisitions. Turns complex brand challenges into clear, actionable go-to-market strategies.</div></div>
+        <div class="team-card"><div class="team-name">Hamzah Alsagoff</div><div class="team-role">Client Strategy & Brand Communications</div><div class="team-years">20+ years · Integrated Brand Communications</div><div class="team-bio">A veteran brand communications practitioner who works as co-brand custodian alongside clients — integrating new and traditional media to achieve sustainable growth. The senior strategic voice in every PI:X client relationship.</div></div>
+        <div class="team-card"><div class="team-name">Leanne Tchea</div><div class="team-role">Go-to-Market & Campaign Strategy</div><div class="team-years">10+ years · FMCG, Lifestyle, Hospitality</div><div class="team-bio">Builds brands locally and regionally across lifestyle, corporate, arts, hospitality and FMCG. Has led consumer brand launches and integrated campaign activations across retail and marketing communications channels throughout Asia.</div></div>
+        <div class="team-card"><div class="team-name">Keith Cheong</div><div class="team-role">Digital Transformation & Web</div><div class="team-years">10+ years · Brand Identity & Digital</div><div class="team-bio">Integrates distinctive brand identity with smart digital solutions for both SMEs and MNCs. Ensures that go-to-market strategy translates consistently into every digital customer experience — from website to platform to campaign landing page.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>We'd rather show you<br>than tell you.</h2>
+    <p>A 45-minute growth diagnostic. No pitch. Just an honest conversation about where your brand needs to move next.</p>
+    <button class="btn-white" onclick="showPage('contact')">Book a Growth Diagnostic</button>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><div class="nav-logo" onclick="showPage('home')" style="font-family:var(--font-display); font-size:24px; font-weight:600; color:var(--white); cursor:pointer;">PI<span style="color:var(--accent)">:</span>X</div><p>Go-to-market strategy and execution. A Piquant Ideas initiative.</p></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a onclick="showPage('services')">All Services</a></li><li><a onclick="showPage('network')">Our Network</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a onclick="showPage('grants')">Grants</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a>hello@piquantideas.com</a></li><li><a>(65) 6920 2856</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 PI:X · Piquant Ideas Pte. Ltd.</p><span class="footer-cert">PMC Certified · GoBusiness IPGrow</span></div>
+  </footer>
+</div>
+
+
+
+<!-- ══════════════════════ GRANTS ═══ -->
+<div id="grants" class="page">
+  <div class="page-hero-dark">
+    <div class="container">
+      <div class="eyebrow" style="color:var(--accent);">Grants & Funding</div>
+      <h1>Senior GTM strategy.<br><em>Significantly subsidised.</em></h1>
+      <p>As a PMC-certified consultancy listed on Enterprise Singapore's GoBusiness IPGrow platform, PI:X helps qualifying Singapore businesses access grants covering up to 50% of go-to-market strategy, brand development and market expansion consultancy costs.</p>
+    </div>
+  </div>
+
+  <div class="grants-section">
+    <div class="container">
+      <div class="grant-card">
+        <div class="grant-header">
+          <div class="grant-badge">EDG</div>
+          <div><div class="grant-name">Enterprise Development Grant</div><div class="grant-tagline">For go-to-market strategy, brand development and business strategy projects</div></div>
+          <div class="grant-pct">50%<small>funding support</small></div>
+        </div>
+        <div class="grant-body">
+          <p>The <strong>Enterprise Development Grant</strong> is administered by Enterprise Singapore and supports Singapore companies in building capabilities and growing. For PI:X clients, the EDG covers go-to-market strategy, strategic brand development and business strategy development — meaning up to 50% of our consultancy fees can be funded by Enterprise Singapore.</p>
+          <p>Because PI:X is listed on <strong>GoBusiness IPGrow</strong> as a verified service provider, your application is backed by a consultancy with a published track record and verified PMC credentials — which significantly improves approval confidence.</p>
+          <div class="grant-eligibility">
+            <h4>You Likely Qualify If:</h4>
+            <ul class="elig-list">
+              <li>Your company is registered and operating in Singapore</li>
+              <li>You have at least 30% local shareholding</li>
+              <li>Your project falls under GTM Strategy, Brand Development or Business Strategy scope</li>
+              <li>You are engaging a PMC-certified consultant (PI:X is certified)</li>
+              <li>Your project has a defined scope, timeline and measurable outcomes</li>
+            </ul>
+          </div>
+          <div style="margin-top: 24px;"><button class="btn-dark" onclick="showPage('contact')">Check Your EDG Eligibility — Free →</button></div>
+        </div>
+      </div>
+
+      <div class="grant-card" style="margin-top:1px;">
+        <div class="grant-header">
+          <div class="grant-badge">MRA</div>
+          <div><div class="grant-name">Market Readiness Assistance Grant</div><div class="grant-tagline">For Singapore companies expanding into new overseas markets</div></div>
+          <div class="grant-pct">50%<small>funding support</small></div>
+        </div>
+        <div class="grant-body">
+          <p>The <strong>Market Readiness Assistance (MRA) Grant</strong> helps Singapore businesses take their first steps into overseas markets. PI:X's Market Expansion service is specifically designed to be MRA grant-eligible — covering market entry strategy, brand localisation, market promotion and business development in a new country.</p>
+          <p>We have helped brands expand into Malaysia, Indonesia, Philippines, Taiwan and Vietnam. The MRA grant makes that expertise accessible at a significantly reduced cost for qualifying Singapore businesses.</p>
+          <div class="grant-eligibility">
+            <h4>You Likely Qualify If:</h4>
+            <ul class="elig-list">
+              <li>Your company is Singapore-registered with at least 30% local shareholding</li>
+              <li>Annual revenue does not exceed S$100 million, or ≤ 200 employees</li>
+              <li>You are entering a new overseas market (not one you already operate in)</li>
+              <li>Activities include market entry strategy, market promotion or business development</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="pmc-banner">
+        <div>
+          <h3>Why our GoBusiness listing matters for your application</h3>
+          <p>PI:X is listed on <strong>Enterprise Singapore's GoBusiness IPGrow platform</strong> — the government's curated directory of verified service providers. This means your grant application is backed by a consultancy with published credentials, verified delivery track record, and ongoing accountability to a national standard. It materially improves approval confidence and gives your board a clear basis for the engagement decision.</p>
+        </div>
+        <button class="btn-dark" onclick="showPage('contact')" style="white-space:nowrap; flex-shrink:0;">Start Your Application</button>
+      </div>
+
+      <div style="margin-top: 60px;">
+        <div class="eyebrow">How It Works</div>
+        <h2 class="display" style="margin-bottom: 44px;">From conversation<br>to <em>approved and underway.</em></h2>
+        <div class="process-grid">
+          <div class="process-step"><div class="ps-num">01</div><div class="ps-title">Free Assessment</div><div class="ps-body">We assess your project scope and confirm EDG or MRA eligibility. No cost, no obligation, 30 minutes.</div></div>
+          <div class="process-step"><div class="ps-num">02</div><div class="ps-title">Scope & Proposal</div><div class="ps-body">We design a grant-compliant project scope that delivers genuine strategic value — not just ticks the grant boxes.</div></div>
+          <div class="process-step"><div class="ps-num">03</div><div class="ps-title">Grant Application</div><div class="ps-body">We prepare and submit the application on your behalf. All documentation managed by PI:X.</div></div>
+          <div class="process-step"><div class="ps-num">04</div><div class="ps-title">Work Begins</div><div class="ps-body">Upon approval, your GTM strategy project begins — with the same senior team throughout.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <h2>Find out in 30 minutes<br>what you qualify for.</h2>
+    <p>Free eligibility assessment. No obligation. Most clients are pleasantly surprised.</p>
+    <button class="btn-white" onclick="showPage('contact')">Book a Free Eligibility Assessment</button>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><div class="nav-logo" onclick="showPage('home')" style="font-family:var(--font-display); font-size:24px; font-weight:600; color:var(--white); cursor:pointer;">PI<span style="color:var(--accent)">:</span>X</div><p>Go-to-market strategy and execution. A Piquant Ideas initiative.</p></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a onclick="showPage('services')">Services</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a>hello@piquantideas.com</a></li><li><a>(65) 6920 2856</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 PI:X · Piquant Ideas Pte. Ltd.</p><span class="footer-cert">PMC Certified · GoBusiness IPGrow</span></div>
+  </footer>
+</div>
+
+
+<!-- ════════════════════ INSIGHTS ═══ -->
+<div id="insights" class="page">
+  <div class="page-hero-light">
+    <div class="container">
+      <div class="eyebrow">Insights</div>
+      <h1>Thinking from<br><em>12 years of moving brands.</em></h1>
+      <p style="font-size:17px; color:var(--mid); max-width:500px; line-height:1.75; margin-top:22px;">Go-to-market perspectives from the PI:X team — drawn from real client work across 8 industries, 6 countries and 25+ brand engagements. Not theory. Practice.</p>
+    </div>
+  </div>
+
+  <section style="padding: 64px 48px;">
+    <div class="container">
+      <div class="articles-grid">
+        <div class="article-card"><div class="art-cat">Go-to-Market</div><div class="art-title">Is your brand ready to reach a new consumer segment?</div><div class="art-excerpt">Most brands assume their next growth move is more of the same audience. The real opportunity — and the real risk — is almost always in a segment they haven't considered. Here's how to evaluate readiness.</div><div class="art-read">Read Article →</div></div>
+        <div class="article-card"><div class="art-cat">Market Expansion</div><div class="art-title">Three things that kill Singapore brands when they expand into SEA</div><div class="art-excerpt">After helping brands enter six Southeast Asian markets, the failure patterns are remarkably consistent. None of them are about the product. All of them are about the go-to-market approach.</div><div class="art-read">Read Article →</div></div>
+        <div class="article-card"><div class="art-cat">Brand Relevance</div><div class="art-title">The slow drift: how brands lose relevance before they notice</div><div class="art-excerpt">The most dangerous moment for a brand is not a crisis. It is the quiet, gradual misalignment between what the brand stands for and what its audience now expects. Here's how to spot it early.</div><div class="art-read">Read Article →</div></div>
+        <div class="article-card"><div class="art-cat">Brand Partnerships</div><div class="art-title">How to find the brand partnership your competitors haven't thought of yet</div><div class="art-excerpt">The best brand partnerships aren't obvious — they are the ones that create value no single brand could have built alone. Here is the framework PI:X uses to identify them, structure them and make them work.</div><div class="art-read">Read Article →</div></div>
+        <div class="article-card"><div class="art-cat">Grants & Funding</div><div class="art-title">What the EDG grant actually covers — and what most businesses miss</div><div class="art-excerpt">Most Singapore business owners know the EDG grant exists. Very few understand the full scope — including go-to-market strategy, business model work and market entry planning. A plain-English guide.</div><div class="art-read">Read Article →</div></div>
+        <div class="article-card"><div class="art-cat">Public Sector</div><div class="art-title">How to build a campaign that moves an entire industry</div><div class="art-excerpt">Working with the Law Society of Singapore and Singapore Maritime Foundation has shaped how we think about institutional communications. What works, what fails, and the one thing most public sector campaigns get wrong.</div><div class="art-read">Read Article →</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>Want these ideas applied<br>to your brand's next move?</h2>
+    <p>The thinking is free. The application is where the value is.</p>
+    <button class="btn-white" onclick="showPage('contact')">Book a Growth Diagnostic</button>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><div class="nav-logo" onclick="showPage('home')" style="font-family:var(--font-display); font-size:24px; font-weight:600; color:var(--white); cursor:pointer;">PI<span style="color:var(--accent)">:</span>X</div><p>Go-to-market strategy and execution. A Piquant Ideas initiative.</p></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a onclick="showPage('services')">Services</a></li><li><a onclick="showPage('network')">Our Network</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a>hello@piquantideas.com</a></li><li><a>(65) 6920 2856</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 PI:X · Piquant Ideas Pte. Ltd.</p><span class="footer-cert">PMC Certified · GoBusiness IPGrow</span></div>
+  </footer>
+</div>
+
+
+<!-- ══════════════════════ CONTACT ═══ -->
+<div id="contact" class="page">
+  <div class="page-hero-dark">
+    <div class="container">
+      <div class="eyebrow" style="color:var(--accent);">Get in Touch</div>
+      <h1>Tell us where<br>you want to <em>grow.</em></h1>
+      <p>A complimentary 45-minute growth diagnostic for qualifying organisations. We'll give you a frank assessment of your current position, identify your most valuable next move, and tell you exactly what it takes to get there — regardless of whether you engage us.</p>
+    </div>
+  </div>
+
+  <div class="contact-body">
+    <div class="contact-grid container">
+      <div class="contact-info">
+        <h3>A growth diagnostic, not a pitch.</h3>
+        <p>In 45 minutes with a senior PI:X strategist, you'll get a clear-eyed view of where your brand is, where the real growth opportunity is, and what the go-to-market move looks like to get there.</p>
+        <p>If there's a fit with PI:X, we'll explain what an engagement would look like. If not, we'll point you in the right direction. Either way, you leave with something useful.</p>
+        <div class="contact-detail"><label>Email</label><span>hello@piquantideas.com</span></div>
+        <div class="contact-detail"><label>Phone</label><span>(65) 6920 2856</span></div>
+        <div class="contact-detail"><label>Address</label><span>36 Carpenter Street, Singapore 059915</span></div>
+        <div class="contact-detail"><label>Certification</label><span>PMC Certified · Enterprise Singapore · GoBusiness IPGrow Listed</span></div>
+        <div class="contact-detail"><label>Parent company</label><span>Piquant Ideas Pte. Ltd. · Est. 2013</span></div>
+      </div>
+      <div>
+        <div class="form-group"><label>Your Name</label><input type="text" placeholder="Full name"></div>
+        <div class="form-group"><label>Organisation</label><input type="text" placeholder="Company or organisation name"></div>
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
+        <div class="form-group"><label>What best describes your organisation?</label>
+          <select><option value="">— Select —</option><option>Listed company / GLC</option><option>Government body / Statutory board</option><option>MNC with Singapore / SEA presence</option><option>Growth-stage SME</option><option>International brand entering Singapore</option><option>Other</option></select>
+        </div>
+        <div class="form-group"><label>Where do you want to grow?</label>
+          <select><option value="">— Select your growth move —</option><option>Reach a new consumer segment</option><option>Expand from Singapore into SEA</option><option>Enter Singapore from overseas</option><option>Reinvent brand relevance for changing audiences</option><option>Launch an integrated campaign or brand partnership</option><option>Government / industry communications project</option><option>Access EDG or MRA grant funding</option><option>Not sure yet — I'd like a diagnostic</option></select>
+        </div>
+        <div class="form-group"><label>Tell us more (optional)</label><textarea placeholder="Brief context about your situation, timeline, target market or specific challenge."></textarea></div>
+        <button class="btn-dark" style="width:100%; padding:17px;" onclick="alert('Thank you. We will be in touch within one business day.')">Send Message</button>
+        <p style="font-size:12px; color:var(--mid); margin-top:12px; line-height:1.6;">We respond to every enquiry within one business day. For urgent matters, email hello@piquantideas.com or call (65) 6920 2856 directly.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><div class="nav-logo" onclick="showPage('home')" style="font-family:var(--font-display); font-size:24px; font-weight:600; color:var(--white); cursor:pointer;">PI<span style="color:var(--accent)">:</span>X</div><p>Go-to-market strategy and execution. A Piquant Ideas initiative, est. 2013. PMC Certified · GoBusiness IPGrow.</p></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a onclick="showPage('services')">All Services</a></li><li><a onclick="showPage('network')">Our Network</a></li><li><a onclick="showPage('grants')">Grants</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a onclick="showPage('about')">About PI:X</a></li><li><a onclick="showPage('insights')">Insights</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a>hello@piquantideas.com</a></li><li><a>(65) 6920 2856</a></li><li><a>36 Carpenter Street, SG</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 PI:X · A division of Piquant Ideas Pte. Ltd. · Reg. 2013</p>
+      <span class="footer-cert">PMC Certified · Enterprise Singapore · GoBusiness IPGrow</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const page = document.getElementById(id);
+    if (page) { page.classList.add('active'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  }
+</script>
+</body>
+</html>
